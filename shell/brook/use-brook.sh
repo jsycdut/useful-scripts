@@ -24,9 +24,8 @@ done
 
 echo
 for i in 5 4 3 2 1; do
-	echo -ne "\rchoose one, input it's index (default 1, auto in ${i}s): "
-	read -t 1 choice
-	if [ $? -eq 0 ]; then
+	echo -ne "\rchoose one, input its index (default 1, auto in ${i}s): "
+	if read -t 1 choice && [[ -n "$choice" ]]; then
 		break
 	fi
 done
